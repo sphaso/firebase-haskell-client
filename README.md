@@ -12,3 +12,19 @@ Possible modules:
 * Auth
 * REST operations
 * JSON handling
+
+Basic Use Case:
+The library user has 
+* auth information (probably wrapped inside a JSON Object)
+* a URL
+* a HTTP Operation that he wants to perform
+EITHER 
+* a JSON Object that he wants to insert / update
+OR
+* an identifier or range of identifiers (in JSON format?) for Objects he wants to retrieve.
+
+He expects as a result either
+* An confirm message in case of an insert/update
+* an error message
+* the requested object(s) in JSON format
+
