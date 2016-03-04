@@ -12,7 +12,7 @@ onlyShallow opts = (shallowIn && (length opts) == 1) || (not shallowIn)
 
 onlyGets :: [RequestParameter] -> Bool
 onlyGets opts = and (map (\x -> elem (fst x) getOnly) opts)
-                    where getOnly = [Shallow, Callback, Format, Download]
+                    where getOnly = [Shallow, Callback, Format, Download, Print]
 
 printValue :: [RequestParameter] -> Bool
 printValue opts = (isNothing a) || (snda == "pretty") || (snda == "silent")
@@ -28,5 +28,5 @@ anyEmpty :: [RequestParameter] -> Bool
 anyEmpty opts = and $ map (\(a,b) -> b /= "") opts
 
 validate :: [RequestParameter] -> Bool
-validate = (\x -> (onlyShallow x) && (onlyGets x) && (printValue x) && (orderByValue x) && (anyEmpty x))
+validate = (fmap and . sequence) [anyEmpty, orderByValue, printValue, onlyGets, onlyShallow]
 
