@@ -1,9 +1,11 @@
 module Types where
 
-type RequestParameter = (QueryParameters, String)
+import Data.ByteString.Lazy
 
-data QueryParameters = Auth | Shallow | Callback | Format | OrderBy | LimitToFirst | LimitToLast | StartAt | EndAt | EqualTo | Print
+type RequestParameter = (QueryParameter, String)
+
+data QueryParameter = Auth | Shallow | Callback | Format | OrderBy | LimitToFirst | LimitToLast | StartAt | EndAt | EqualTo | Print | Download deriving (Eq)
 
 data FireRequest = FireRequest { url :: String, parameters :: [RequestParameter] }
 
-
+data FireResponse = FireResponse { body :: ByteString, status :: Int }
