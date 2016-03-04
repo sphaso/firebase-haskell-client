@@ -28,5 +28,5 @@ anyEmpty :: [RequestParameter] -> Bool
 anyEmpty opts = and $ map (\(a,b) -> b /= "") opts
 
 validate :: [RequestParameter] -> Bool
-validate = (fmap and . sequence) [anyEmpty, orderByValue, printValue, onlyGets, onlyShallow]
+validate xs = all ($ xs) [anyEmpty, orderByValue, printValue, onlyGets, onlyShallow]
 
