@@ -4,7 +4,7 @@ import Data.ByteString.Lazy
 
 type RequestParameter = (QueryParameter, String)
 
-data QueryParameter = Auth | Shallow | Callback | Format | OrderBy | LimitToFirst | LimitToLast | StartAt | EndAt | EqualTo | Print | Download deriving (Eq)
+data QueryParameter = Auth | Shallow | Callback | Format | OrderBy | LimitToFirst | LimitToLast | StartAt | EndAt | EqualTo | Print | Download deriving (Eq, Show)
 
 data FireRequest = FireRequest { url :: String, parameters :: [RequestParameter] }
 
