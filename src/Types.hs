@@ -1,6 +1,7 @@
 module Types where
 
 import Data.ByteString.Lazy
+import Network.HTTP.Types.Header
 
 type RequestParameter = (QueryParameter, String)
 
@@ -8,4 +9,4 @@ data QueryParameter = Auth | Shallow | Callback | Format | OrderBy | LimitToFirs
 
 data FireRequest = FireRequest { url :: String, parameters :: [RequestParameter] }
 
-data FireResponse = FireResponse { body :: ByteString, status :: Int }
+data FireResponse = FireResponse { body :: ByteString, status :: Int, headers :: [Header] }

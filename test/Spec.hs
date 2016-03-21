@@ -12,5 +12,5 @@ main :: IO ()
 main = hspec $ do
     describe "Http.get" $ do
         it "returns the contens of httpbin.org/xml" $ do
-            (FireResponse _ status) <- get $ FireRequest "http://httpbin.org/xml" []
+            (FireResponse _ status _) <- get $ FireRequest "http://httpbin.org/xml" []
             status `shouldBe` 200

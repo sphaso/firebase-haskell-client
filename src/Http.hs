@@ -5,7 +5,7 @@ module Http where
 import Control.Lens
 import Data.Aeson.Lens (_String, key)
 import qualified Data.ByteString.Lazy as BL
-import Network.Wreq as WR (get, delete, responseBody, responseStatus, statusCode)
+import Network.Wreq as WR (get, delete, responseBody, responseStatus, statusCode, responseHeaders)
 import Network.Wreq.Types
 import Data.Text (pack)
 import Types
@@ -17,9 +17,9 @@ get (FireRequest url opts) = do
                                 let validation = validate opts
                                 let pars = buildParameters opts
                                 response <- WR.get (url ++ "?" ++ pars)
-                                return $ FireResponse (response ^. WR.responseBody) (response ^. WR.responseStatus . WR.statusCode)
+                                return $ FireResponse (response ^. WR.responseBody) (response ^. WR.responseStatus . WR.statusCode) (response ^. WR.responseHeaders)
 
 delete :: String -> IO FireResponse
 delete url = do
                 response <- WR.delete url
-                return $ FireResponse (response ^. WR.responseBody) (response ^. WR.responseStatus . WR.statusCode)
+                return $ FireResponse (response ^. WR.responseBody) (response ^. WR.responseStatus . WR.statusCode) (response ^. WR.responseHeaders)
