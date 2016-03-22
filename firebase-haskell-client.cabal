@@ -1,13 +1,13 @@
 name:                firebase-haskell-client
 version:             0.1.0.0
-synopsis:            Initial project template from stack
+synopsis:            A client for the firebase backend cloud service
 description:         Please see README.md
 homepage:            http://github.com/githubuser/firebase-haskell-client#readme
-license:             BSD3
+license:             BSD3 --something MIT-like?
 license-file:        LICENSE
-author:              Author name here
-maintainer:          example@example.com
-copyright:           2016 Author Here
+author:              Giovanni Ornaghi, Roland Brand
+maintainer:          somebody@not-yet-defined.com
+copyright:           2016 Giovanni Ornaghi, Roland Brand
 category:            Web
 build-type:          Simple
 -- extra-source-files:
@@ -15,7 +15,7 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Lib, Http, Types, FireLogic, UriBuilder
+  exposed-modules:     Http, Types, FireLogic, UriBuilder
   build-depends:       base >= 4.7 && < 5
                      , wreq
                      , lens
@@ -23,19 +23,6 @@ library
                      , bytestring
                      , text
                      , http-types
-  default-language:    Haskell2010
-
-executable firebase-haskell-client-exe
-  hs-source-dirs:      app
-  main-is:             Main.hs
-  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
-  build-depends:       base
-                     , wreq
-                     , lens
-                     , lens-aeson
-                     , bytestring
-                     , text
-                     , firebase-haskell-client
   default-language:    Haskell2010
 
 test-suite firebase-haskell-client-test

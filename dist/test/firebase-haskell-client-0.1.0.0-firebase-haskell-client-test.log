@@ -1,0 +1,11 @@
+Test suite firebase-haskell-client-test: RUNNING...
+
+Http.get
+  returns the contens of httpbin.org/xml
+Some dummy test
+  checks if 1+1=2
+
+Finished in 0.2819 seconds
+2 examples, 0 failures
+Test suite firebase-haskell-client-test: PASS
+Test suite logged to: dist\test\firebase-haskell-client-0.1.0.0-firebase-haskell-client-test.log
