@@ -3,7 +3,7 @@ version:             0.1.0.0
 synopsis:            A client for the firebase backend cloud service
 description:         Please see README.md
 homepage:            http://github.com/githubuser/firebase-haskell-client#readme
-license:             BSD3 --something MIT-like?
+license:             BSD3
 license-file:        LICENSE
 author:              Giovanni Ornaghi, Roland Brand
 maintainer:          somebody@not-yet-defined.com
