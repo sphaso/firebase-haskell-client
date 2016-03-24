@@ -20,6 +20,7 @@ library
                      , wreq
                      , lens
                      , lens-aeson
+                     , aeson
                      , bytestring
                      , text
                      , http-types
