@@ -12,3 +12,7 @@ main = hspec $ do
         it "returns the contens of httpbin.org/xml" $ do
             (FireResponse _ status _) <- get $ FireRequest "http://httpbin.org/xml" []
             status `shouldBe` 200
+
+    describe "Http.get with empty parameters" $ do
+        it "throws an error" $ do
+            (get $ FireRequest "http://httpbin.org.xml" [(Format, "")]) `shouldThrow` anyException
