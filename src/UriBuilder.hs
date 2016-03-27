@@ -1,6 +1,7 @@
 module UriBuilder where
 
+import Data.List
 import Types
 
 buildParameters :: [RequestParameter] -> String
-buildParameters qp = concat $ map (\(a, b) -> concat [show a, "=", b, "&"]) qp
+buildParameters qp = intercalate "&" $ map (\(a, b) -> concat [show a, "=", b]) qp
