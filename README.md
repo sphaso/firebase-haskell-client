@@ -2,8 +2,8 @@
 
 _DEVELOPMENT_
 - an environment variable is needed called "FIREBASE_CONF". It points to a file where you have
--- as a first line your Firebase Secret key
--- as a second line your Firebase root URL complete with a trailing slash
+  - as a first line your Firebase Secret key
+  - as a second line your Firebase root URL complete with a trailing slash
 
 Meeting 20160301:
 
