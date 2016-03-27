@@ -1,5 +1,10 @@
 # firebase-haskell-client
 
+_DEVELOPMENT_
+- an environment variable is needed called "FIREBASE_CONF". It points to a file where you have
+-- as a first line your Firebase Secret key
+-- as a second line your Firebase root URL complete with a trailing slash
+
 Meeting 20160301:
 
 * stack or cabal? stack
@@ -14,7 +19,7 @@ Possible modules:
 * JSON handling
 
 Basic Use Case:
-The library user has 
+The library user has
 * auth information (probably wrapped inside a JSON Object)
 * a URL
 * a HTTP Operation that he wants to perform
