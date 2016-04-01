@@ -35,7 +35,7 @@ printValueSilent opts | (isNothing a) || (snda == "pretty") = True
 
 orderByValue :: [RequestParameter] -> Bool
 orderByValue opts | (isNothing a) || (snda == "$key") || (snda == "$value") || (snda == "$priority") = True
-                  | otherwise = error "Order argument not recognized: it shuold be either $key, $value or $priority"
+                  | otherwise = error "Order argument not recognized: it should be either $key, $value or $priority"
                     where a = find (\(a,b) -> a == OrderBy) opts
                           snda = snd (fromMaybe (OrderBy, "") a)
 
