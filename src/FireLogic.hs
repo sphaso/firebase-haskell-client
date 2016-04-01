@@ -52,3 +52,9 @@ validatePost xs = all ($ xs) [anyEmpty, onlyGet, printValue]
 validateDelete :: [RequestParameter] -> Bool
 validateDelete xs = all ($ xs) [anyEmpty, printValueSilent]
 
+validatePut :: [RequestParameter] -> Bool
+validatePut xs = all ($ xs) [anyEmpty]
+
+validatePatch :: [RequestParameter] -> Bool
+validatePatch xs = all ($ xs) [anyEmpty]
+
