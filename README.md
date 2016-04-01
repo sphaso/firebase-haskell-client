@@ -5,6 +5,7 @@ _DEVELOPMENT_
   - as a first line your Firebase Secret key
   - as a second line your Firebase root URL complete with a trailing slash
 - you need to add a JSON to your root as `{"haskell":"awesome"}` to pass the integration test
+note that "haskell" won't show with quotation marks in the Firebase online UI
 
 Meeting 20160301:
 
