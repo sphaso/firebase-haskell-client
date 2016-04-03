@@ -30,6 +30,8 @@ test-suite firebase-haskell-client-test
   type:                exitcode-stdio-1.0
   hs-source-dirs:      test
   main-is:             Spec.hs
+  other-modules:       IntegrationTests
+                     , UnitTests
   build-depends:       base
                      , firebase-haskell-client
                      , hspec
