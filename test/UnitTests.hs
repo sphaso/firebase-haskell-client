@@ -36,3 +36,12 @@ spec = do
   describe "UriBuilder with two parameters" $ do
       it "returns a String with the concatenated params" $ do
           (buildParameters [(Callback, "False"), (OrderBy, "date")]) `shouldBe` "Callback=False&OrderBy=date"
+
+
+  -- # DRAFTS for test cases based on Firebase Docs
+
+  -- test for a request without token version (server or client side validation)?
+  -- test for a request without iat (issued at) ''
+  -- test for a request without data
+  -- test for a request with admin (and test wether we can really mess something up in an amin fashion)
+  -- somehow test optional claims: nbf, exp, admin, debug
