@@ -11,3 +11,5 @@ data FireRequest = FireRequest { url :: String, parameters :: [RequestParameter]
                  | JSONFireRequest { json :: String, url :: String,  parameters :: [RequestParameter] }
 
 data FireResponse = FireResponse { body :: ByteString, status :: Int, headers :: [Header] }
+
+data FireJWT = FireJWT { v :: Int, iat :: Int, d :: [(String, String)], nbf :: Maybe Int, exp :: Maybe Int, admin :: Maybe Bool, debug :: Maybe Bool }
