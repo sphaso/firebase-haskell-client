@@ -9,7 +9,7 @@ makeClaim :: Int -> [(String, String)] -> FireJWT
 makeClaim iat d = FireJWT 0 iat d Nothing Nothing Nothing Nothing
 
 addNbf :: Int -> FireJWT -> FireJWT
-addNbf nbf (FireJWT v iat d _ exp admin debug = FireJTW v iat d (Just nbf) exp admin debug
+addNbf nbf (FireJWT v iat d _ exp admin debug) = FireJWT v iat d (Just nbf) exp admin debug
 
 addExp :: Int -> FireJWT -> FireJWT
 addExp exp (FireJWT v iat d nbf _ admin debug) = FireJWT v iat d nbf (Just exp) admin debug
