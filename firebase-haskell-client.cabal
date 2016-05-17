@@ -24,6 +24,7 @@ library
                      , bytestring
                      , text
                      , http-types
+                     , jwt
   default-language:    Haskell2010
 
 test-suite firebase-haskell-client-test
