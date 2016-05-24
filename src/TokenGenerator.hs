@@ -4,7 +4,7 @@ import Types
 
 import Data.HashMap
 import Data.Text (unpack, pack, Text)
-import Web.JWT (encodeSigned, secret, ClaimsMap, JWTClaimsSet, JSON, Algorithm(HS256))
+import Web.JWT (def, StringOrURI, stringOrURI, encodeSigned, secret, ClaimsMap, JWTClaimsSet(..), JSON, Algorithm(HS256))
 
 makeClaim :: Int -> [(String, String)] -> FireJWT
 makeClaim iat d = FireJWT 0 iat d Nothing Nothing Nothing Nothing
@@ -17,6 +17,6 @@ generate scrt claims = encodeSigned HS256 (secret $ pack scrt) claims
 
 --TODO: JWTClaimsSet and ClaimsMap constructors not in scope (solution needed or change approach)
 claimsFromFireJWT :: FireJWT -> JWTClaimsSet
-claimsFromFireJWT FireJWT (v, iat, d, nbf, exp, admin, debug)
-    = JWTClaimsSet (Nothing, Nothing, Nothing, exp, nbf, iat, Nothing, ClaimsMap d)
-        where d = insert "admin" admin $ insert "debug" debug . empty
+claimsFromFireJWT (FireJWT v iat d nbf exp admin debug)
+    = def { iss = stringOrURI (pack "Foo") }
+        -- where d = insert "admin" admin $ insert "debug" debug . empty
