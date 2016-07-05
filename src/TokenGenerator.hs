@@ -2,7 +2,6 @@ module TokenGenerator where
 
 import Types
 
-import Data.HashMap
 import Data.Text (unpack, pack, Text)
 import Web.JWT (def, StringOrURI, stringOrURI, encodeSigned, secret, ClaimsMap, JWTClaimsSet(..), JSON, Algorithm(HS256))
 
